@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// ler o tamanho de um vetor, alocar a memoria correta para sua utilização, ler os elementos digitados pelo usuario e printalos no final
+// ler o tamanho de um vetor, alocar a memoria correta para sua utilização, ler os elementos digitados pelo usuario e printa-los no final
 int main(){
 
     int tamanho;
