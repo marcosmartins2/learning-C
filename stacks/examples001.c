@@ -19,7 +19,7 @@ typedef struct no
     
 }No;
 
-No *topo = NULL;
+
 
 
 Pessoa ler_pessoa() {
@@ -37,6 +37,8 @@ void imprimir_pessoa(Pessoa p) {
 
 // Operação push = empilhar
 No* empilhar(No *topo) {
+
+    
     No *novo = malloc(sizeof(No));
 
     if(novo){
@@ -70,9 +72,23 @@ No* desempilhar(No **topo){
 
 }
 
+void imprimir_pilha(No *topo){
+
+    printf("\n\n -----------------PILHA --------------------");
+
+
+    while(topo){
+        imprimir_pessoa(topo->p);
+        topo = topo->proximo;
+
+    }
+    printf("\n\n -----------------FIM DA PILHA--------------------");
+
+}
+
 
 int main() {
-
+    No *remover,*topo = NULL;
     
     int opcao;
 
@@ -88,10 +104,18 @@ int main() {
             topo = empilhar(topo);
             break;
         case 2:
+        remover = desempilhar(&topo);
+            if (remover){
+                printf("Elemento removido com sucesso");
+                imprimir_pessoa(remover->p);
+            } else {
+                printf("\n\n Sem nó a remover");
+            }
+
 
             break;
         case 3:
-
+            imprimir_pilha(topo);
             break;
         default:
             if(opcao != 0){
